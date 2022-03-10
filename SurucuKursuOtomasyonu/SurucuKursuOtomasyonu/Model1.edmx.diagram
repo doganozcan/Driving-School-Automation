@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9e9dd7656d0b474b823f97f964c05acd" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="SurucuKursuModel.DireksiyonDersiKayit" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.Donem" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.Kullanici" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.KullaniciTuru" Width="1.5" PointX="1.5" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.Kursiyer" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.KursiyerBakiye" Width="1.5" PointX="3.125" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.KursiyerBelgeKayit" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.KursiyerOdeme" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.KursiyerSinavKayit" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.OdemeTuru" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.Sinav" Width="1.5" PointX="6" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.SinavTuru" Width="1.5" PointX="3.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurucuKursuModel.SurucuBelgesiTuru" Width="1.5" PointX="3.75" PointY="14.25" IsExpanded="true" />
+        <AssociationConnector Association="SurucuKursuModel.FK_DireksiyonDersiKayit_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_DireksiyonDersiKayit_Kursiyer" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerBelgeKayit_Donem" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_Kullanici_KullaniciTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerBelgeKayit_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerOdeme_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerSinavKayit_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerBakiye_Kursiyer" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerBelgeKayit_Kursiyer" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerOdeme_Kursiyer" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerSinavKayit_Kursiyer" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerBelgeKayit_SurucuBelgesiTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerSinavKayit_KursiyerBelgeKayit" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerOdeme_OdemeTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_KursiyerSinavKayit_Sinav" ManuallyRouted="false" />
+        <AssociationConnector Association="SurucuKursuModel.FK_Sinav_SinavTuru" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SurucuKursuModel.SK_Bilgileri" Width="1.5" PointX="1.375" PointY="1.375" />
+        <EntityTypeShape EntityType="SurucuKursuModel.Genel_LOG" Width="1.5" PointX="6.625" PointY="1" />
+        <EntityTypeShape EntityType="SurucuKursuModel.LOG_Sil" Width="1.5" PointX="8.25" PointY="1" />
+        <EntityTypeShape EntityType="SurucuKursuModel.OdemeView" Width="1.5" PointX="5.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

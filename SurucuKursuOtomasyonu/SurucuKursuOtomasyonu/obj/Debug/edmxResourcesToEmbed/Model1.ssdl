@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SurucuKursuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DireksiyonDersiKayit">
+    <Key>
+      <PropertyRef Name="DireksiyonDers_ID" />
+    </Key>
+    <Property Name="DireksiyonDers_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kursiyer_ID" Type="int" Nullable="false" />
+    <Property Name="Tutar" Type="int" Nullable="false" />
+    <Property Name="Tarih" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KaydedenKullanici_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Donem">
+    <Key>
+      <PropertyRef Name="Donem_ID" />
+    </Key>
+    <Property Name="Donem_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ay" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Yil" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Genel_LOG">
+    <Key>
+      <PropertyRef Name="LOG_ID" />
+    </Key>
+    <Property Name="LOG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" />
+    <Property Name="Adi_Soyadi" Type="nvarchar" MaxLength="150" />
+    <Property Name="islemTarihi" Type="nvarchar" MaxLength="200" />
+    <Property Name="Mesaj" Type="nchar" MaxLength="300" />
+    <Property Name="StackTrace" Type="nchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="Kullanici_ID" />
+    </Key>
+    <Property Name="Kullanici_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kullanici_Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kullanici_Sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="KullaniciTuru_ID" Type="int" Nullable="false" />
+    <Property Name="TC" Type="nvarchar" MaxLength="11" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="DogumTarihi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Eposta" Type="nvarchar" MaxLength="50" />
+    <Property Name="maas" Type="int" />
+  </EntityType>
+  <EntityType Name="KullaniciTuru">
+    <Key>
+      <PropertyRef Name="KullaniciTuru_ID" />
+    </Key>
+    <Property Name="KullaniciTuru_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Turu" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kursiyer">
+    <Key>
+      <PropertyRef Name="Kursiyer_ID" />
+    </Key>
+    <Property Name="Kursiyer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="DogumTarih" Type="nvarchar" MaxLength="50" />
+    <Property Name="TC" Type="nvarchar" MaxLength="11" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="OgrenimDurumu" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdliBelge" Type="bit" />
+    <Property Name="SaglikRaporu" Type="bit" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="KayitTarihi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="KursiyerBakiye">
+    <Key>
+      <PropertyRef Name="KursiyerBakiye_ID" />
+    </Key>
+    <Property Name="KursiyerBakiye_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Odenen" Type="int" />
+    <Property Name="Borc" Type="int" />
+    <Property Name="Kursiyer_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="KursiyerBelgeKayit">
+    <Key>
+      <PropertyRef Name="KBID" />
+    </Key>
+    <Property Name="KBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kursiyer_ID" Type="int" Nullable="false" />
+    <Property Name="SurucuBelgesi_ID" Type="int" />
+    <Property Name="Kayıt_Tarih" Type="nvarchar" MaxLength="50" />
+    <Property Name="Donem_ID" Type="int" />
+    <Property Name="KaydedenKullanici_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="KursiyerOdeme">
+    <Key>
+      <PropertyRef Name="KursiyerOdeme_ID" />
+    </Key>
+    <Property Name="KursiyerOdeme_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kursiyer_ID" Type="int" Nullable="false" />
+    <Property Name="Tutar" Type="int" />
+    <Property Name="islemTarihi" Type="nvarchar" MaxLength="50" />
+    <Property Name="OdemeTuru_ID" Type="int" Nullable="false" />
+    <Property Name="KaydedenKullanici_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KursiyerSinavKayit">
+    <Key>
+      <PropertyRef Name="KursiyerSinav_ID" />
+    </Key>
+    <Property Name="KursiyerSinav_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kursiyer_ID" Type="int" />
+    <Property Name="Sinav_ID" Type="int" />
+    <Property Name="Kayitzamani" Type="nvarchar" MaxLength="50" />
+    <Property Name="KaydedenKullanici_ID" Type="int" />
+    <Property Name="KursiyerBelgeKayit_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="LOG_Sil">
+    <Key>
+      <PropertyRef Name="Sil_ID" />
+    </Key>
+    <Property Name="Sil_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" />
+    <Property Name="adiSoyadi" Type="nchar" MaxLength="150" />
+    <Property Name="TC" Type="nvarchar" MaxLength="11" />
+    <Property Name="telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="adres" Type="nvarchar" MaxLength="250" />
+    <Property Name="SilenKisi" Type="nvarchar" MaxLength="150" />
+    <Property Name="silmeTarihi" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="OdemeTuru">
+    <Key>
+      <PropertyRef Name="OdemeTuru_ID" />
+    </Key>
+    <Property Name="OdemeTuru_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Turu" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sinav">
+    <Key>
+      <PropertyRef Name="Sinav_ID" />
+    </Key>
+    <Property Name="Sinav_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tarihi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SinavTuru_ID" Type="int" Nullable="false" />
+    <Property Name="saat" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SinavTuru">
+    <Key>
+      <PropertyRef Name="SinavTuru_ID" />
+    </Key>
+    <Property Name="SinavTuru_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SinavTuru" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ucreti" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SK_Bilgileri">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SK_Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="SK_Adress" Type="nvarchar" MaxLength="50" />
+    <Property Name="SK_Telefon" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SurucuBelgesiTuru">
+    <Key>
+      <PropertyRef Name="SurucuBelgesiT_ID" />
+    </Key>
+    <Property Name="SurucuBelgesiT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BelgeSinifi" Type="nvarchar" MaxLength="50" />
+    <Property Name="KullandigiArac" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ucreti" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SurucuKursu.dbo.OdemeView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="OdemeView">
+    <Key>
+      <PropertyRef Name="Kursiyer_ID" />
+    </Key>
+    <Property Name="Kursiyer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC" Type="nvarchar" MaxLength="11" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_DireksiyonDersiKayit_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DireksiyonDersiKayit" Type="Self.DireksiyonDersiKayit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kullanici_ID" />
+      </Principal>
+      <Dependent Role="DireksiyonDersiKayit">
+        <PropertyRef Name="KaydedenKullanici_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DireksiyonDersiKayit_Kursiyer">
+    <End Role="Kursiyer" Type="Self.Kursiyer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DireksiyonDersiKayit" Type="Self.DireksiyonDersiKayit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kursiyer">
+        <PropertyRef Name="Kursiyer_ID" />
+      </Principal>
+      <Dependent Role="DireksiyonDersiKayit">
+        <PropertyRef Name="Kursiyer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullanici_KullaniciTuru">
+    <End Role="KullaniciTuru" Type="Self.KullaniciTuru" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KullaniciTuru">
+        <PropertyRef Name="KullaniciTuru_ID" />
+      </Principal>
+      <Dependent Role="Kullanici">
+        <PropertyRef Name="KullaniciTuru_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerBakiye_Kursiyer">
+    <End Role="Kursiyer" Type="Self.Kursiyer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerBakiye" Type="Self.KursiyerBakiye" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kursiyer">
+        <PropertyRef Name="Kursiyer_ID" />
+      </Principal>
+      <Dependent Role="KursiyerBakiye">
+        <PropertyRef Name="Kursiyer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerBelgeKayit_Donem">
+    <End Role="Donem" Type="Self.Donem" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerBelgeKayit" Type="Self.KursiyerBelgeKayit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donem">
+        <PropertyRef Name="Donem_ID" />
+      </Principal>
+      <Dependent Role="KursiyerBelgeKayit">
+        <PropertyRef Name="Donem_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerBelgeKayit_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerBelgeKayit" Type="Self.KursiyerBelgeKayit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kullanici_ID" />
+      </Principal>
+      <Dependent Role="KursiyerBelgeKayit">
+        <PropertyRef Name="KaydedenKullanici_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerBelgeKayit_Kursiyer">
+    <End Role="Kursiyer" Type="Self.Kursiyer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerBelgeKayit" Type="Self.KursiyerBelgeKayit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kursiyer">
+        <PropertyRef Name="Kursiyer_ID" />
+      </Principal>
+      <Dependent Role="KursiyerBelgeKayit">
+        <PropertyRef Name="Kursiyer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerBelgeKayit_SurucuBelgesiTuru">
+    <End Role="SurucuBelgesiTuru" Type="Self.SurucuBelgesiTuru" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerBelgeKayit" Type="Self.KursiyerBelgeKayit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurucuBelgesiTuru">
+        <PropertyRef Name="SurucuBelgesiT_ID" />
+      </Principal>
+      <Dependent Role="KursiyerBelgeKayit">
+        <PropertyRef Name="SurucuBelgesi_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerOdeme_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerOdeme" Type="Self.KursiyerOdeme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kullanici_ID" />
+      </Principal>
+      <Dependent Role="KursiyerOdeme">
+        <PropertyRef Name="KaydedenKullanici_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerOdeme_Kursiyer">
+    <End Role="Kursiyer" Type="Self.Kursiyer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerOdeme" Type="Self.KursiyerOdeme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kursiyer">
+        <PropertyRef Name="Kursiyer_ID" />
+      </Principal>
+      <Dependent Role="KursiyerOdeme">
+        <PropertyRef Name="Kursiyer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerOdeme_OdemeTuru">
+    <End Role="OdemeTuru" Type="Self.OdemeTuru" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerOdeme" Type="Self.KursiyerOdeme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OdemeTuru">
+        <PropertyRef Name="OdemeTuru_ID" />
+      </Principal>
+      <Dependent Role="KursiyerOdeme">
+        <PropertyRef Name="OdemeTuru_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerSinavKayit_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerSinavKayit" Type="Self.KursiyerSinavKayit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kullanici_ID" />
+      </Principal>
+      <Dependent Role="KursiyerSinavKayit">
+        <PropertyRef Name="KaydedenKullanici_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerSinavKayit_Kursiyer">
+    <End Role="Kursiyer" Type="Self.Kursiyer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerSinavKayit" Type="Self.KursiyerSinavKayit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kursiyer">
+        <PropertyRef Name="Kursiyer_ID" />
+      </Principal>
+      <Dependent Role="KursiyerSinavKayit">
+        <PropertyRef Name="Kursiyer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerSinavKayit_KursiyerBelgeKayit">
+    <End Role="KursiyerBelgeKayit" Type="Self.KursiyerBelgeKayit" Multiplicity="0..1" />
+    <End Role="KursiyerSinavKayit" Type="Self.KursiyerSinavKayit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KursiyerBelgeKayit">
+        <PropertyRef Name="KBID" />
+      </Principal>
+      <Dependent Role="KursiyerSinavKayit">
+        <PropertyRef Name="KursiyerBelgeKayit_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KursiyerSinavKayit_Sinav">
+    <End Role="Sinav" Type="Self.Sinav" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KursiyerSinavKayit" Type="Self.KursiyerSinavKayit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sinav">
+        <PropertyRef Name="Sinav_ID" />
+      </Principal>
+      <Dependent Role="KursiyerSinavKayit">
+        <PropertyRef Name="Sinav_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sinav_SinavTuru">
+    <End Role="SinavTuru" Type="Self.SinavTuru" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sinav" Type="Self.Sinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SinavTuru">
+        <PropertyRef Name="SinavTuru_ID" />
+      </Principal>
+      <Dependent Role="Sinav">
+        <PropertyRef Name="SinavTuru_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="OdemeYap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Kursiyer_ID" Type="int" Mode="In" />
+    <Parameter Name="Tutar" Type="int" Mode="In" />
+    <Parameter Name="OdemeTuru_ID" Type="int" Mode="In" />
+    <Parameter Name="Kullanici_ID" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="SurucuKursuModelStoreContainer">
+    <EntitySet Name="DireksiyonDersiKayit" EntityType="Self.DireksiyonDersiKayit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Donem" EntityType="Self.Donem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genel_LOG" EntityType="Self.Genel_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KullaniciTuru" EntityType="Self.KullaniciTuru" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kursiyer" EntityType="Self.Kursiyer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KursiyerBakiye" EntityType="Self.KursiyerBakiye" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KursiyerBelgeKayit" EntityType="Self.KursiyerBelgeKayit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KursiyerOdeme" EntityType="Self.KursiyerOdeme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KursiyerSinavKayit" EntityType="Self.KursiyerSinavKayit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOG_Sil" EntityType="Self.LOG_Sil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OdemeTuru" EntityType="Self.OdemeTuru" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sinav" EntityType="Self.Sinav" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SinavTuru" EntityType="Self.SinavTuru" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SK_Bilgileri" EntityType="Self.SK_Bilgileri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SurucuBelgesiTuru" EntityType="Self.SurucuBelgesiTuru" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OdemeView" EntityType="Self.OdemeView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [OdemeView].[Kursiyer_ID] AS [Kursiyer_ID], 
+    [OdemeView].[TC] AS [TC], 
+    [OdemeView].[Adi] AS [Adi], 
+    [OdemeView].[Soyadi] AS [Soyadi]
+    FROM [dbo].[OdemeView] AS [OdemeView]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_DireksiyonDersiKayit_Kullanici" Association="Self.FK_DireksiyonDersiKayit_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="DireksiyonDersiKayit" EntitySet="DireksiyonDersiKayit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DireksiyonDersiKayit_Kursiyer" Association="Self.FK_DireksiyonDersiKayit_Kursiyer">
+      <End Role="Kursiyer" EntitySet="Kursiyer" />
+      <End Role="DireksiyonDersiKayit" EntitySet="DireksiyonDersiKayit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullanici_KullaniciTuru" Association="Self.FK_Kullanici_KullaniciTuru">
+      <End Role="KullaniciTuru" EntitySet="KullaniciTuru" />
+      <End Role="Kullanici" EntitySet="Kullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerBakiye_Kursiyer" Association="Self.FK_KursiyerBakiye_Kursiyer">
+      <End Role="Kursiyer" EntitySet="Kursiyer" />
+      <End Role="KursiyerBakiye" EntitySet="KursiyerBakiye" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerBelgeKayit_Donem" Association="Self.FK_KursiyerBelgeKayit_Donem">
+      <End Role="Donem" EntitySet="Donem" />
+      <End Role="KursiyerBelgeKayit" EntitySet="KursiyerBelgeKayit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerBelgeKayit_Kullanici" Association="Self.FK_KursiyerBelgeKayit_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="KursiyerBelgeKayit" EntitySet="KursiyerBelgeKayit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerBelgeKayit_Kursiyer" Association="Self.FK_KursiyerBelgeKayit_Kursiyer">
+      <End Role="Kursiyer" EntitySet="Kursiyer" />
+      <End Role="KursiyerBelgeKayit" EntitySet="KursiyerBelgeKayit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerBelgeKayit_SurucuBelgesiTuru" Association="Self.FK_KursiyerBelgeKayit_SurucuBelgesiTuru">
+      <End Role="SurucuBelgesiTuru" EntitySet="SurucuBelgesiTuru" />
+      <End Role="KursiyerBelgeKayit" EntitySet="KursiyerBelgeKayit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerOdeme_Kullanici" Association="Self.FK_KursiyerOdeme_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="KursiyerOdeme" EntitySet="KursiyerOdeme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerOdeme_Kursiyer" Association="Self.FK_KursiyerOdeme_Kursiyer">
+      <End Role="Kursiyer" EntitySet="Kursiyer" />
+      <End Role="KursiyerOdeme" EntitySet="KursiyerOdeme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerOdeme_OdemeTuru" Association="Self.FK_KursiyerOdeme_OdemeTuru">
+      <End Role="OdemeTuru" EntitySet="OdemeTuru" />
+      <End Role="KursiyerOdeme" EntitySet="KursiyerOdeme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerSinavKayit_Kullanici" Association="Self.FK_KursiyerSinavKayit_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="KursiyerSinavKayit" EntitySet="KursiyerSinavKayit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerSinavKayit_Kursiyer" Association="Self.FK_KursiyerSinavKayit_Kursiyer">
+      <End Role="Kursiyer" EntitySet="Kursiyer" />
+      <End Role="KursiyerSinavKayit" EntitySet="KursiyerSinavKayit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerSinavKayit_KursiyerBelgeKayit" Association="Self.FK_KursiyerSinavKayit_KursiyerBelgeKayit">
+      <End Role="KursiyerBelgeKayit" EntitySet="KursiyerBelgeKayit" />
+      <End Role="KursiyerSinavKayit" EntitySet="KursiyerSinavKayit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KursiyerSinavKayit_Sinav" Association="Self.FK_KursiyerSinavKayit_Sinav">
+      <End Role="Sinav" EntitySet="Sinav" />
+      <End Role="KursiyerSinavKayit" EntitySet="KursiyerSinavKayit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sinav_SinavTuru" Association="Self.FK_Sinav_SinavTuru">
+      <End Role="SinavTuru" EntitySet="SinavTuru" />
+      <End Role="Sinav" EntitySet="Sinav" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

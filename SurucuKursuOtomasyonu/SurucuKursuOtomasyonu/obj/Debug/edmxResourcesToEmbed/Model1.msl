@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SurucuKursuModelStoreContainer" CdmEntityContainer="SurucuKursuEntities">
+    <EntitySetMapping Name="DireksiyonDersiKayit">
+      <EntityTypeMapping TypeName="SurucuKursuModel.DireksiyonDersiKayit">
+        <MappingFragment StoreEntitySet="DireksiyonDersiKayit">
+          <ScalarProperty Name="DireksiyonDers_ID" ColumnName="DireksiyonDers_ID" />
+          <ScalarProperty Name="Kursiyer_ID" ColumnName="Kursiyer_ID" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="KaydedenKullanici_ID" ColumnName="KaydedenKullanici_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donem">
+      <EntityTypeMapping TypeName="SurucuKursuModel.Donem">
+        <MappingFragment StoreEntitySet="Donem">
+          <ScalarProperty Name="Donem_ID" ColumnName="Donem_ID" />
+          <ScalarProperty Name="Ay" ColumnName="Ay" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="SurucuKursuModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="maas" ColumnName="maas" />
+          <ScalarProperty Name="Kullanici_ID" ColumnName="Kullanici_ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Kullanici_Adi" ColumnName="Kullanici_Adi" />
+          <ScalarProperty Name="Kullanici_Sifre" ColumnName="Kullanici_Sifre" />
+          <ScalarProperty Name="KullaniciTuru_ID" ColumnName="KullaniciTuru_ID" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciTuru">
+      <EntityTypeMapping TypeName="SurucuKursuModel.KullaniciTuru">
+        <MappingFragment StoreEntitySet="KullaniciTuru">
+          <ScalarProperty Name="KullaniciTuru_ID" ColumnName="KullaniciTuru_ID" />
+          <ScalarProperty Name="Turu" ColumnName="Turu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kursiyer">
+      <EntityTypeMapping TypeName="SurucuKursuModel.Kursiyer">
+        <MappingFragment StoreEntitySet="Kursiyer">
+          <ScalarProperty Name="Kursiyer_ID" ColumnName="Kursiyer_ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="DogumTarih" ColumnName="DogumTarih" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="OgrenimDurumu" ColumnName="OgrenimDurumu" />
+          <ScalarProperty Name="AdliBelge" ColumnName="AdliBelge" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="SaglikRaporu" ColumnName="SaglikRaporu" />
+          <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KursiyerBakiye">
+      <EntityTypeMapping TypeName="SurucuKursuModel.KursiyerBakiye">
+        <MappingFragment StoreEntitySet="KursiyerBakiye">
+          <ScalarProperty Name="Borc" ColumnName="Borc" />
+          <ScalarProperty Name="KursiyerBakiye_ID" ColumnName="KursiyerBakiye_ID" />
+          <ScalarProperty Name="Odenen" ColumnName="Odenen" />
+          <ScalarProperty Name="Kursiyer_ID" ColumnName="Kursiyer_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KursiyerBelgeKayit">
+      <EntityTypeMapping TypeName="SurucuKursuModel.KursiyerBelgeKayit">
+        <MappingFragment StoreEntitySet="KursiyerBelgeKayit">
+          <ScalarProperty Name="KBID" ColumnName="KBID" />
+          <ScalarProperty Name="Kursiyer_ID" ColumnName="Kursiyer_ID" />
+          <ScalarProperty Name="SurucuBelgesi_ID" ColumnName="SurucuBelgesi_ID" />
+          <ScalarProperty Name="Kayıt_Tarih" ColumnName="Kayıt_Tarih" />
+          <ScalarProperty Name="Donem_ID" ColumnName="Donem_ID" />
+          <ScalarProperty Name="KaydedenKullanici_ID" ColumnName="KaydedenKullanici_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KursiyerOdeme">
+      <EntityTypeMapping TypeName="SurucuKursuModel.KursiyerOdeme">
+        <MappingFragment StoreEntitySet="KursiyerOdeme">
+          <ScalarProperty Name="KursiyerOdeme_ID" ColumnName="KursiyerOdeme_ID" />
+          <ScalarProperty Name="Kursiyer_ID" ColumnName="Kursiyer_ID" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="islemTarihi" ColumnName="islemTarihi" />
+          <ScalarProperty Name="OdemeTuru_ID" ColumnName="OdemeTuru_ID" />
+          <ScalarProperty Name="KaydedenKullanici_ID" ColumnName="KaydedenKullanici_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KursiyerSinavKayit">
+      <EntityTypeMapping TypeName="SurucuKursuModel.KursiyerSinavKayit">
+        <MappingFragment StoreEntitySet="KursiyerSinavKayit">
+          <ScalarProperty Name="KursiyerSinav_ID" ColumnName="KursiyerSinav_ID" />
+          <ScalarProperty Name="Kursiyer_ID" ColumnName="Kursiyer_ID" />
+          <ScalarProperty Name="Sinav_ID" ColumnName="Sinav_ID" />
+          <ScalarProperty Name="Kayitzamani" ColumnName="Kayitzamani" />
+          <ScalarProperty Name="KaydedenKullanici_ID" ColumnName="KaydedenKullanici_ID" />
+          <ScalarProperty Name="KursiyerBelgeKayit_ID" ColumnName="KursiyerBelgeKayit_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OdemeTuru">
+      <EntityTypeMapping TypeName="SurucuKursuModel.OdemeTuru">
+        <MappingFragment StoreEntitySet="OdemeTuru">
+          <ScalarProperty Name="OdemeTuru_ID" ColumnName="OdemeTuru_ID" />
+          <ScalarProperty Name="Turu" ColumnName="Turu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sinav">
+      <EntityTypeMapping TypeName="SurucuKursuModel.Sinav">
+        <MappingFragment StoreEntitySet="Sinav">
+          <ScalarProperty Name="Sinav_ID" ColumnName="Sinav_ID" />
+          <ScalarProperty Name="Tarihi" ColumnName="Tarihi" />
+          <ScalarProperty Name="SinavTuru_ID" ColumnName="SinavTuru_ID" />
+          <ScalarProperty Name="saat" ColumnName="saat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SinavTuru">
+      <EntityTypeMapping TypeName="SurucuKursuModel.SinavTuru">
+        <MappingFragment StoreEntitySet="SinavTuru">
+          <ScalarProperty Name="SinavTuru_ID" ColumnName="SinavTuru_ID" />
+          <ScalarProperty Name="SinavTuru1" ColumnName="SinavTuru" />
+          <ScalarProperty Name="Ucreti" ColumnName="Ucreti" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurucuBelgesiTuru">
+      <EntityTypeMapping TypeName="SurucuKursuModel.SurucuBelgesiTuru">
+        <MappingFragment StoreEntitySet="SurucuBelgesiTuru">
+          <ScalarProperty Name="SurucuBelgesiT_ID" ColumnName="SurucuBelgesiT_ID" />
+          <ScalarProperty Name="BelgeSinifi" ColumnName="BelgeSinifi" />
+          <ScalarProperty Name="KullandigiArac" ColumnName="KullandigiArac" />
+          <ScalarProperty Name="Ucreti" ColumnName="Ucreti" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SK_Bilgileri">
+      <EntityTypeMapping TypeName="SurucuKursuModel.SK_Bilgileri">
+        <MappingFragment StoreEntitySet="SK_Bilgileri">
+          <ScalarProperty Name="SK_Telefon" ColumnName="SK_Telefon" />
+          <ScalarProperty Name="SK_Adress" ColumnName="SK_Adress" />
+          <ScalarProperty Name="SK_Adi" ColumnName="SK_Adi" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genel_LOG">
+      <EntityTypeMapping TypeName="SurucuKursuModel.Genel_LOG">
+        <MappingFragment StoreEntitySet="Genel_LOG">
+          <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+          <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+          <ScalarProperty Name="islemTarihi" ColumnName="islemTarihi" />
+          <ScalarProperty Name="Adi_Soyadi" ColumnName="Adi_Soyadi" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LOG_ID" ColumnName="LOG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_Sil">
+      <EntityTypeMapping TypeName="SurucuKursuModel.LOG_Sil">
+        <MappingFragment StoreEntitySet="LOG_Sil">
+          <ScalarProperty Name="silmeTarihi" ColumnName="silmeTarihi" />
+          <ScalarProperty Name="SilenKisi" ColumnName="SilenKisi" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="adiSoyadi" ColumnName="adiSoyadi" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Sil_ID" ColumnName="Sil_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OdemeView">
+      <EntityTypeMapping TypeName="SurucuKursuModel.OdemeView">
+        <MappingFragment StoreEntitySet="OdemeView">
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="Kursiyer_ID" ColumnName="Kursiyer_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="OdemeYap" FunctionName="SurucuKursuModel.Store.OdemeYap" />
+  </EntityContainerMapping>
+</Mapping>
